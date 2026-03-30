@@ -62,3 +62,8 @@ def session_scope():
         raise
     finally:
         session.close()
+        
+
+# Avoid circular import
+from app.item.model import Item
+from app.user.model import User

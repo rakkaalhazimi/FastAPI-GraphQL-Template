@@ -12,9 +12,7 @@ from app.context import GraphQLContext
 from app.db import Base, engine, db_conn, get_db
 
 from app.item import item_graphql
-from app.item.model import Item
 from app.user import user_graphql
-from app.user.model import User
 from app.user.user_types import UserPayload
 
 
