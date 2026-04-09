@@ -12,6 +12,33 @@
   
 - Payment
 
+## Alembic
+Initiate Alembic
+```
+alembic init alembic
+```
+
+Create Migration Script
+```
+alembic revision -m "initial migration"
+```
+
+Run Migration
+```
+alembic upgrade head
+```
+
+Rollback Migration
+```
+alembic downgrade -1
+```
+
+Migration History
+```
+alembic history --verbose
+```
+
+
 
 ```python
 # GraphQL Query

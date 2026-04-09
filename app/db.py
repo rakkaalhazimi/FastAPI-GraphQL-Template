@@ -36,7 +36,7 @@ def create_tables():
 
 
 # SQLAlchemy
-engine = create_engine(f"sqlite:///{settings.sqlite_db_name}")
+engine = create_engine(settings.database_url)
 Base = declarative_base()
 SQLSession = sessionmaker(bind=engine)
 

@@ -13,6 +13,7 @@ class Settings(BaseSettings):
     temp_folder: str = "temp"
     
     sqlite_db_name: str = "second.db"
+    database_url: str
     
     # Load env variables from multiple files
     # ../.env for local
