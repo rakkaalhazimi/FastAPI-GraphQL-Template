@@ -15,6 +15,9 @@ class Settings(BaseSettings):
     sqlite_db_name: str = "second.db"
     database_url: str
     
+    google_client_id: str
+    google_client_secret: str
+    
     # Load env variables from multiple files
     # ../.env for local
     # /volume/.env for GCP Cloud Run

@@ -2,7 +2,7 @@ from typing import List, Optional
 
 import strawberry
 
-from app.auth import IsAuthenticated
+from app.auth.auth_service import IsAuthenticated
 from app.context import GraphQLInfo
 
 from app.item.item_service import item_service

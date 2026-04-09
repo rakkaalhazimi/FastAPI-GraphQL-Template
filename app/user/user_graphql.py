@@ -1,6 +1,6 @@
 import strawberry
 
-from app.auth import IsAuthenticated
+from app.auth.auth_service import IsAuthenticated
 from app.context import GraphQLInfo
 
 from app.user.user_types import UserQL

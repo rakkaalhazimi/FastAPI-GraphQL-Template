@@ -1,7 +1,7 @@
 from fastapi import status
 from sqlalchemy.orm import Session
 
-from app.auth import (
+from app.auth.auth_service import (
     create_access_token,
     check_username, 
     check_email, 

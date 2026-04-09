@@ -3,14 +3,17 @@ from typing import Optional, Tuple
 
 from fastapi import FastAPI, Depends
 from sqlalchemy.orm import Session
+from starlette.middleware.sessions import SessionMiddleware
 import strawberry
 from strawberry.fastapi import GraphQLRouter
 from strawberry.tools import merge_types
 
-from app.auth import get_current_user
 from app.context import GraphQLContext
 from app.db import Base, engine, db_conn, get_db
+from app.settings import settings
 
+from app.auth.auth_service import get_current_user
+from app.auth.auth_routes import router as auth_router
 from app.item import item_graphql
 from app.user import user_graphql
 from app.user.user_types import UserPayload
@@ -57,6 +60,8 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(lifespan=lifespan)
 app.include_router(graphql_app, prefix="/graphql", dependencies=[])
+app.include_router(auth_router)
+app.add_middleware(SessionMiddleware, secret_key=settings.secret_key)
 
 
 if __name__ == "__main__":
